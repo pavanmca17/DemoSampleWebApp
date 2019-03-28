@@ -8,6 +8,20 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="1.0.172" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\htmlpage.html" />
+    <None Include="wwwroot\Scripts\jquery\core.js" />
+    <None Include="wwwroot\Scripts\jquery\jquery.js" />
+    <None Include="wwwroot\Scripts\jquery\jquery.min.js" />
+    <None Include="wwwroot\Scripts\jquery\jquery.min.map" />
+    <None Include="wwwroot\Scripts\jquery\jquery.slim.js" />
+    <None Include="wwwroot\Scripts\jquery\jquery.slim.min.js" />
+    <None Include="wwwroot\Scripts\jquery\jquery.slim.min.map" />
+    <None Include="wwwroot\Scripts\MyAngular.js" />
+    <None Include="wwwroot\Scripts\sampejsquery.js" />
   </ItemGroup>
 
 </Project>
