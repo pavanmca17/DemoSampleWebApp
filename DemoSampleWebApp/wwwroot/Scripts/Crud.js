@@ -1,7 +1,7 @@
 ﻿var newapp = angular.module('newApp', ['ui.grid']);
 
 newapp.controller('newController', function ($scope, $http) {
-    $scope.arrEmps = new Array;
+    $scope.myData = [];
 
     getData();
 
@@ -19,27 +19,19 @@ newapp.controller('newController', function ($scope, $http) {
         };
 
         $http(request).then(function (response) {
-            console.log('Get Response', response);
-            console.log('Get Response Data', response.data);
-            var i = 0;
-            angular.forEach(response.data,
-                function () {
-                    var emp =
-                    {
-                        Id: response[i].data.id,
-                        Name: response[i].data.name,
-                        Email: response[i].data.email
-                    };
-                    console.log('emp', emp);
-                    $scope.arrEmps.push(emp);
-                    i += 1;
-                },
-                function (error) {
-                    alert('Error');
-                });
+            console.log('Get Response', response);           
+            console.log('Get Response', response.data); 
+            //var jsondataobj = JSON.parse(response);
+            //console.log('JSON', jsondataobj);  
+            //var rowcount = jsondataobj.length;
+            //console.log('Count', rowcount);  
 
-            alert($scope.arrEmps);
-            $scope.gridData = { data: 'arrEmps' };
+            response.data.forEach(function (row) {
+                $scope.myData.push(row);
+            });                  
+            
+            $scope.gridData.data = [];    
+            $scope.gridData.data = $scope.myData;
 
         });
 
